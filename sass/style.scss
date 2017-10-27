@@ -1,0 +1,112 @@
+/*!  
+Theme Name: Casarini Studio
+Theme URI: http://nambbu.com.br
+Description: Tema criado exclusivamente para o site da empresa Casarini Studio.
+Author: namBBU Design e Comunicação
+Author URI: http://nambbu.com.br
+Version: 0.0.1 
+*/
+
+/**
+ * Vars 
+ */
+@import "vars";
+
+/**
+ * Mixins
+ */
+@import "mixins";
+
+/**
+ * Defaults 
+ */
+*, *:before, *:after {
+    box-sizing: border-box; 
+}
+body {
+	background: #fff;
+	font-family: $main_font;
+	margin: 0;
+	padding: 0;
+}
+figure {
+    margin: 0;
+}
+img {
+	height: auto;
+    max-width: 100%;
+}
+a {
+	color: $main_color;
+	font-weight: 700;
+	text-decoration: none;
+	@include soft-transition;
+	&:visited {
+		color: $main_color;
+	}
+	&:hover,
+	&:focus,
+	&:active {
+		color: $main_color;
+	}
+	&:focus {
+		outline: thin dotted;
+	}
+	&:hover,
+	&:active {
+		outline: 0;
+	}
+}
+
+/**
+ * Typography 
+ */
+@import "typography";
+
+/**
+ * Helpers 
+ */
+@import "helpers";
+
+/**
+ * Accessibility
+ */
+@import "accessibility";
+
+/**
+ * Grid 
+ */
+@import "grid";
+
+/** 
+ * Site-header 
+ */
+@import "site-header";
+
+/** 
+ * Site-footer 
+ */
+@import "site-content";
+
+/** 
+ * Site-footer 
+ */
+@import "site-footer";
+
+/**
+ * Sidebars
+ */
+@import "sidebars";
+
+/**
+ * Components
+ */ 
+@import "components/buttons";
+@import "components/forms";
+@import "components/media";
+@import "components/widgets";
+
+/**
+ * Plugins custom css
+ */ 
+@import "plugins-custom";

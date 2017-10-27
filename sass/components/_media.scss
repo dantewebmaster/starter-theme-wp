@@ -1,0 +1,92 @@
+/* Make sure embeds and iframes fit their containers */
+embed,
+iframe,
+object {
+	max-width: 100%;
+}
+
+.wp-caption {
+	margin-bottom: 1.5em;
+	max-width: 100%;
+
+	img[class*="wp-image-"] {
+		@include center-block;
+	}
+
+	.wp-caption-text {
+		margin: 0.8075em 0;
+	}
+}
+
+.wp-caption-text {
+	text-align: center;
+}
+
+.gallery {
+	margin: 2rem auto 4rem;
+	@include below(768px) {
+		margin: 0 auto;
+		padding: 0.5rem 5rem;
+	}
+	@include below(480px) {
+		padding: 0;
+	}
+}
+.gallery-item {
+	display: inline-block;
+	padding: 2px;
+	text-align: center;
+	vertical-align: top;
+	width: 100%;
+	// Loops to enumerate the classes for gallery columns.
+	@for $i from 2 through 9 {
+		.gallery-columns-#{$i} & {
+			max-width: (100% / $i);
+		}
+	}
+	img {
+		float: left;
+		width: 100%;
+		@include soft-transition();
+	}
+	a {
+		display: block;
+		overflow: hidden;
+		position: relative;
+		width: 100%;
+		&:before, &:after {
+			content: "";
+			height: 100%;
+			left: 0;
+			opacity: 0;
+			position: absolute;
+			top: 0;
+			width: 100%;
+			z-index: 10;
+			@include soft-transition(0, all, 0.5s);
+		}
+		&:before {
+			background: rgba($main_color, 0.5);
+		}
+		&:after {
+			background: url(images/photo-camera.png) center no-repeat;
+			transform: scale(1.3);			
+		}
+		&:hover {
+			img {
+				filter: blur(2px);
+				transform: scale(1.5) rotate(6deg);
+			}
+			&:before {
+				opacity: 1;
+			}
+			&:after {
+				opacity: 1;
+				transform: scale(1);
+			}
+		}
+	}
+}
+.gallery-caption {
+	display: block;
+}
