@@ -5,6 +5,12 @@
     }
 }
 
+@mixin between($max_width, $min_width) {
+	@media screen and (max-width: $max_width) and (min-width: $min_width) {
+		@content;
+	}
+}
+
 // default pseudo style 
 @mixin pseudo($display: block, $pos: absolute, $content: ''){
     content: $content;
@@ -13,7 +19,7 @@
 }
 
 //  css triangle
-@mixin css-triangle($color, $direction, $size: 6px, $position: absolute, $round: false){
+@mixin css-triangle($color, $direction, $size: 6px, $position: absolute, $round: false) {
     @include pseudo($pos: $position);
     width: 0;
     height: 0;
@@ -89,12 +95,12 @@
 
 // Clearfix
 @mixin clearfix() {
-	content: "";
-	display: table;
-	table-layout: fixed;
-}
-
-// Clear after (not all clearfix need this also)
-@mixin clearfix-after() {
-	clear: both;
+    &:before,
+    &:after {
+        content: "";
+        display: table;
+    }
+    &:after {
+        clear: both;
+    }
 }

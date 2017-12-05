@@ -23,6 +23,11 @@ Version: 0.0.1
 @import "defaults";
 
 /**
+ * Accessibility 
+ */
+@import "accessibility";
+
+/**
  * Typography 
  */
 @import "typography";
@@ -31,11 +36,6 @@ Version: 0.0.1
  * Helpers 
  */
 @import "helpers";
-
-/**
- * Accessibility
- */
-@import "accessibility";
 
 /**
  * Grid 
@@ -48,12 +48,22 @@ Version: 0.0.1
 @import "site-header";
 
 /** 
- * Site-footer 
+ * Site navigations
+ */
+@import "site-navigations";
+
+/** 
+ * Site content
  */
 @import "site-content";
 
 /** 
- * Site-footer 
+ * Site sections
+ */
+@import "site-sections";
+
+/** 
+ * Site footer 
  */
 @import "site-footer";
 
@@ -78,7 +88,7 @@ Version: 0.0.1
 .demo-grid {
 	div {
 		border: 1px solid #ccc;
-		background: #ddd;
-		padding: 1rem;
+		background: #f7f7f7;
+		padding: 0.5rem;
 	}
 }
