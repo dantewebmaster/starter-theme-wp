@@ -24,4 +24,5 @@ Este tema usa gulp como task runner e necessita das seguintes dependências.
 * Splitar código do WP Customizer para melhor organização.
 
 ## Changelog
+**05/12/2017** - v1.0.1: BrowserSync removido.
 **27/10/2017** - v1.0.0: Versão inicial.

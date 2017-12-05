@@ -1,10 +1,10 @@
 /*!  
-Theme Name: Casarini Studio
-Theme URI: http://nambbu.com.br
-Description: Tema criado exclusivamente para o site da empresa Casarini Studio.
-Author: namBBU Design e Comunicação
-Author URI: http://nambbu.com.br
-Version: 0.0.1 
+Theme Name: Starter Theme WP
+Theme URI: https://dantewebmaster.com/
+Description: Este é meu tema inicial criado para agilizar o processo de criação de temas em Wordpress..
+Author: Dante Webmaster
+Author URI: https://dantewebmaster.com
+Version: 0.0.1
 */
 
 /**
@@ -20,43 +20,7 @@ Version: 0.0.1
 /**
  * Defaults 
  */
-*, *:before, *:after {
-    box-sizing: border-box; 
-}
-body {
-	background: #fff;
-	font-family: $main_font;
-	margin: 0;
-	padding: 0;
-}
-figure {
-    margin: 0;
-}
-img {
-	height: auto;
-    max-width: 100%;
-}
-a {
-	color: $main_color;
-	font-weight: 700;
-	text-decoration: none;
-	@include soft-transition;
-	&:visited {
-		color: $main_color;
-	}
-	&:hover,
-	&:focus,
-	&:active {
-		color: $main_color;
-	}
-	&:focus {
-		outline: thin dotted;
-	}
-	&:hover,
-	&:active {
-		outline: 0;
-	}
-}
+@import "defaults";
 
 /**
  * Typography 
@@ -110,3 +74,11 @@ a {
  * Plugins custom css
  */ 
 @import "plugins-custom";
+
+.demo-grid {
+	div {
+		border: 1px solid #ccc;
+		background: #ddd;
+		padding: 1rem;
+	}
+}

@@ -10,9 +10,6 @@ var concat        = require('gulp-concat');
 var uglify        = require('gulp-uglify');
 var imagemin      = require('gulp-imagemin');
 
-var browserSync   = require('browser-sync').create();
-var reload        = browserSync.reload;
-
 var onError = function (err) {
 	console.log('An error occurred:', gutil.colors.magenta(err.message));
 	gutil.beep();
@@ -43,13 +40,9 @@ gulp.task('images', function() {
 });
 
 gulp.task('watch', function() {
-	browserSync.init({
-		files: ['../**/*.php'],
-		proxy: 'http://casarinistudio.dev/',
-	});
-	gulp.watch('../sass/**/*.scss', ['sass', reload]);
-	gulp.watch('js/**/*.js', ['js', reload]);
-	gulp.watch('images/*', ['images', reload]);
+	gulp.watch('../sass/**/*.scss', ['sass']);
+	gulp.watch('js/**/*.js', ['js']);
+	gulp.watch('images/*', ['images']);
 });
 
 gulp.task('default', ['sass', 'js', 'images', 'watch']);
